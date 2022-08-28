@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 """
   Openbox Key Editor
   
@@ -108,10 +108,10 @@ def view():
     actionlist = ActionList(propertytable)
     keytable = KeyTable(actionlist, obkeyconf, window)
 
-    window.set_default_size(max(width,800), max(height,600))
+    window.set_default_size(max(width, 800), max(height, 600))
     verticalbox = Gtk.VPaned()
     print((verticalbox.__dict__))
-    verticalbox.set_size_request(300,-1)
+    verticalbox.set_size_request(300, -1)
     verticalbox.pack1(propertytable.widget, True, True)
     verticalbox.pack2(actionlist.widget, True, True)
 
@@ -130,26 +130,28 @@ OPT_DESC = {
     '--help|-h': ['Show this help'],
 }
 
+
 def usage():
     """usage"""
     opt = []
     for (optname, optdesc) in list(OPT_DESC.items()):
         tmpopt = [optname]
-        if len(optdesc) > 1: # params
+        if len(optdesc) > 1:  # params
             tmpopt.extend(list(optdesc[1].keys()))
         opt.append(' '.join(tmpopt))
     print((
         'Usage : ' + sys.argv[0] + ' ' +
         ' '.join(
             [('[%s]' % a) for a in opt]
-            )
-        ))
+        )
+    ))
     for (optname, optdesc) in list(OPT_DESC.items()):
         print("{0:<14s} {1:s}".format(optname, optdesc[0]))
         tmpopt = [optname]
-        if len(optdesc) > 1: # params
+        if len(optdesc) > 1:  # params
             for (param, pdesc) in list(optdesc[1].items()):
                 print("  {0:<14s} {1:s}".format(param, pdesc))
+
 
 if __name__ == '__main__':
     help_re = re.compile('--help|-h')
