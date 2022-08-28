@@ -58,14 +58,14 @@ def fixed_writexml(self, indent="", addindent="", newl="", writer=None):
     proot = False
     # it's all hack, waste of resources etc, but does pretty good result
     if not writer:
-        from StringIO import StringIO
+        from io import StringIO
         writer = StringIO()
         proot = True
 
     writer.write(indent + "<" + self.tagName)
 
     attrs = self._get_attributes()
-    a_names = attrs.keys()
+    a_names = list(attrs.keys())
 #     a_names.sort()
 
     for a_name in a_names:

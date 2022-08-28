@@ -63,7 +63,7 @@ def get_rcfile():
     """return the rcfile from args or find it"""
     ret = None
     rcfileregex = re.compile(r'.*\.xml.*')
-    rcfiles = filter(rcfileregex.match, sys.argv)
+    rcfiles = list(filter(rcfileregex.match, sys.argv))
     if rcfiles:
         ret = rcfiles[0]
     else:
@@ -110,7 +110,7 @@ def view():
 
     window.set_default_size(max(width,800), max(height,600))
     verticalbox = Gtk.VPaned()
-    print(verticalbox.__dict__)
+    print((verticalbox.__dict__))
     verticalbox.set_size_request(300,-1)
     verticalbox.pack1(propertytable.widget, True, True)
     verticalbox.pack2(actionlist.widget, True, True)
@@ -133,27 +133,27 @@ OPT_DESC = {
 def usage():
     """usage"""
     opt = []
-    for (optname, optdesc) in OPT_DESC.items():
+    for (optname, optdesc) in list(OPT_DESC.items()):
         tmpopt = [optname]
         if len(optdesc) > 1: # params
-            tmpopt.extend(optdesc[1].keys())
+            tmpopt.extend(list(optdesc[1].keys()))
         opt.append(' '.join(tmpopt))
-    print(
+    print((
         'Usage : ' + sys.argv[0] + ' ' +
         ' '.join(
             [('[%s]' % a) for a in opt]
             )
-        )
-    for (optname, optdesc) in OPT_DESC.items():
-        print "{0:<14s} {1:s}".format(optname, optdesc[0])
+        ))
+    for (optname, optdesc) in list(OPT_DESC.items()):
+        print("{0:<14s} {1:s}".format(optname, optdesc[0]))
         tmpopt = [optname]
         if len(optdesc) > 1: # params
-            for (param, pdesc) in optdesc[1].items():
-                print "  {0:<14s} {1:s}".format(param, pdesc)
+            for (param, pdesc) in list(optdesc[1].items()):
+                print("  {0:<14s} {1:s}".format(param, pdesc))
 
 if __name__ == '__main__':
     help_re = re.compile('--help|-h')
-    help_matched = filter(help_re.match, sys.argv)
+    help_matched = list(filter(help_re.match, sys.argv))
     if help_matched:
         usage()
     else:
