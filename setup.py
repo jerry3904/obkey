@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
   Setup script
-  Usage : python setup.py build
+  Usage : python3 setup.py build
 """
 from os.path import abspath, join, dirname
 import io
@@ -64,6 +64,7 @@ setup(
     project_urls={
         'Bug Reports': 'https://github.com/luffah/obkey/issues',
         'Source': 'https://github.com/luffah/obkey/',
+        '2022 development' : 'https://github.com/MX-Linux/obkey'
         },
     # For a list of valid classifiers, see
     # https://pypi.python.org/pypi?%3Aaction=list_classifiers
