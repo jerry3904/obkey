@@ -1,0 +1,12 @@
+Source: obkey
+Section: openbox
+Priority: 
+Maintainer: Jerry Bond (stormyjerry@gmail.com)
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+
+Package: obkey
+Architecture: amd64
+Replaces: 
+Depends: ${misc:Depends} 
+Description: An app to manage Openbox keys

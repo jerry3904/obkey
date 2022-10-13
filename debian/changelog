@@ -1,0 +1,7 @@
+obkey (22.10.14) mx; urgency=medium
+
+  * Initial release. (Closes: #XXXXXX)
+  * Updated version by Nite Coder to fix python failures
+  * Created Debian folder and populated
+
+ -- Jerry <jb@mx>  Thu, 13 Oct 2022 10:59:18 -0400
