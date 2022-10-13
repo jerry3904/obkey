@@ -1,0 +1,5 @@
+obkey_parts usr/bin
+obkey usr/bin
+misc/obkey.desktop usr/share/applications
+#unsure installation location
+resources/icons usr/share/pixmaps 
