@@ -3,6 +3,7 @@
 <!-- Copyright (C) 2011-2017 stevenhoneyman (github.com/stevenhoneyman/obkey) -->
 <!-- Copyright (C) 2016-2018 Luffah <luffah@runbox.com> -->
 <!--  The AppData files override any values which are automatically fetched by the AppStream data generator. Applications can ship one or more files in /usr/share/metainfo/%{id}.appdata.xml.  -->
+<!-- MX Linux Devs forked obkey in August 2022, and release this revised version under GPL 3.x with the express permission of the most recent developer: "If you use OpenBox and want to ensure ObKey still working well, feel free to grab the project and notify in Issues you are improving it (there may have technical question you can ask). https://github.com/luffah/obkey: README. -->
 <component type="desktop-application">
   <id>org.obkey.obkey</id>
   <metadata_license>CC0-1.0</metadata_license>
