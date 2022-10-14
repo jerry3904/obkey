@@ -1,6 +1,7 @@
 obkey (22.10.15) UNRELEASED; urgency=medium
 
   * updated various documents with current development info, permission"
+  * corrected install location for icons
 
  -- Jerry <jb@mx>  Thu, 13 Oct 2022 15:16:36 -0400
 
