@@ -1,0 +1,203 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package obkey
+dpkg-buildpackage: info: source version 22.10.16
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by fehlix <fehlix@mxlinux.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with python3  --buildsystem=pybuild 
+   dh_auto_clean -O--buildsystem=pybuild
+I: pybuild base:232: python3.9 setup.py clean 
+Unable to init server: Could not connect: Connection refused
+Unable to init server: Could not connect: Connection refused
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'install_requires'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'platform'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'project_urls'
+  warnings.warn(msg)
+running clean
+removing '/tmpdir/build/obkey/.pybuild/cpython3_3.9/build' (and everything under it)
+'build/bdist.linux-x86_64' does not exist -- can't clean it
+'build/scripts-3.9' does not exist -- can't clean it
+   dh_autoreconf_clean -O--buildsystem=pybuild
+   dh_clean -O--buildsystem=pybuild
+   debian/rules execute_after_dh_clean
+make[1]: Entering directory '/tmpdir/build/obkey'
+rm -rf obkey_parts/__pycache__
+rm -rf deb/*
+make[1]: Leaving directory '/tmpdir/build/obkey'
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building obkey in obkey_22.10.16.tar.xz
+dpkg-source: info: building obkey in obkey_22.10.16.dsc
+ debian/rules build
+dh build --with python3  --buildsystem=pybuild 
+   dh_update_autotools_config -O--buildsystem=pybuild
+   dh_autoreconf -O--buildsystem=pybuild
+   dh_auto_configure -O--buildsystem=pybuild
+I: pybuild base:232: python3.9 setup.py config 
+Unable to init server: Could not connect: Connection refused
+Unable to init server: Could not connect: Connection refused
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'install_requires'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'platform'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'project_urls'
+  warnings.warn(msg)
+running config
+   dh_auto_build -O--buildsystem=pybuild
+I: pybuild base:232: /usr/bin/python3 setup.py build 
+Unable to init server: Could not connect: Connection refused
+Unable to init server: Could not connect: Connection refused
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'install_requires'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'platform'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'project_urls'
+  warnings.warn(msg)
+running build
+running build_py
+creating /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/ActionList.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/Gui.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/KeyTable.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/KeyUtils.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/OBKeyboard.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/OpenboxConfig.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/PropertyTable.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/Resources.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/XmlUtils.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/__init__.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+copying obkey_parts/__version__.py -> /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts
+running build_scripts
+creating build
+creating build/scripts-3.9
+copying and adjusting obkey -> build/scripts-3.9
+changing mode of build/scripts-3.9/obkey from 644 to 755
+   dh_auto_test -O--buildsystem=pybuild
+I: pybuild base:232: cd /tmpdir/build/obkey/.pybuild/cpython3_3.9/build; python3.9 -m unittest discover -v 
+Unable to init server: Could not connect: Connection refused
+Unable to init server: Could not connect: Connection refused
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary --with python3  --buildsystem=pybuild 
+   dh_testroot -O--buildsystem=pybuild
+   dh_prep -O--buildsystem=pybuild
+   dh_auto_install -O--buildsystem=pybuild
+I: pybuild base:232: /usr/bin/python3 setup.py install --root /tmpdir/build/obkey/debian/obkey 
+Unable to init server: Could not connect: Connection refused
+Unable to init server: Could not connect: Connection refused
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'install_requires'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'platform'
+  warnings.warn(msg)
+/usr/lib/python3.9/distutils/dist.py:274: UserWarning: Unknown distribution option: 'project_urls'
+  warnings.warn(msg)
+running install
+running build
+running build_py
+running build_scripts
+running install_lib
+creating /tmpdir/build/obkey/debian/obkey/usr
+creating /tmpdir/build/obkey/debian/obkey/usr/lib
+creating /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9
+creating /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages
+creating /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+creating /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/__version__.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/PropertyTable.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/OBKeyboard.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/KeyUtils.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/KeyTable.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/Resources.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/Gui.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/ActionList.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/XmlUtils.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/OpenboxConfig.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__pycache__/__init__.cpython-39.pyc -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__pycache__
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__version__.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/__init__.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/XmlUtils.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/Resources.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/PropertyTable.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/OpenboxConfig.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/OBKeyboard.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/KeyUtils.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/KeyTable.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/Gui.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+copying /tmpdir/build/obkey/.pybuild/cpython3_3.9/build/obkey_parts/ActionList.py -> /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__version__.py to __version__.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/__init__.py to __init__.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/XmlUtils.py to XmlUtils.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/Resources.py to Resources.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/PropertyTable.py to PropertyTable.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/OpenboxConfig.py to OpenboxConfig.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/OBKeyboard.py to OBKeyboard.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/KeyUtils.py to KeyUtils.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/KeyTable.py to KeyTable.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/Gui.py to Gui.cpython-39.pyc
+byte-compiling /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey_parts/ActionList.py to ActionList.cpython-39.pyc
+running install_scripts
+creating /tmpdir/build/obkey/debian/obkey/usr/bin
+copying build/scripts-3.9/obkey -> /tmpdir/build/obkey/debian/obkey/usr/bin
+changing mode of /tmpdir/build/obkey/debian/obkey/usr/bin/obkey to 755
+running install_data
+creating /tmpdir/build/obkey/debian/obkey/usr/share
+creating /tmpdir/build/obkey/debian/obkey/usr/share/obkey
+creating /tmpdir/build/obkey/debian/obkey/usr/share/obkey/icons
+copying resources/icons/add_child.png -> /tmpdir/build/obkey/debian/obkey/usr/share/obkey/icons
+copying resources/icons/add_sibling.png -> /tmpdir/build/obkey/debian/obkey/usr/share/obkey/icons
+creating /tmpdir/build/obkey/debian/obkey/usr/share/applications
+copying misc/obkey.desktop -> /tmpdir/build/obkey/debian/obkey/usr/share/applications
+creating /tmpdir/build/obkey/debian/obkey/usr/share/appdata
+copying misc/obkey.appdata.xml -> /tmpdir/build/obkey/debian/obkey/usr/share/appdata
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/bs
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/bs/LC_MESSAGES
+copying resources/locale/bs/LC_MESSAGES/obkey.mo -> /tmpdir/build/obkey/debian/obkey/usr/share/locale/bs/LC_MESSAGES
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/fr
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/fr/LC_MESSAGES
+copying resources/locale/fr/LC_MESSAGES/obkey.mo -> /tmpdir/build/obkey/debian/obkey/usr/share/locale/fr/LC_MESSAGES
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/hr
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/hr/LC_MESSAGES
+copying resources/locale/hr/LC_MESSAGES/obkey.mo -> /tmpdir/build/obkey/debian/obkey/usr/share/locale/hr/LC_MESSAGES
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/sr
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/sr/LC_MESSAGES
+copying resources/locale/sr/LC_MESSAGES/obkey.mo -> /tmpdir/build/obkey/debian/obkey/usr/share/locale/sr/LC_MESSAGES
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/uk
+creating /tmpdir/build/obkey/debian/obkey/usr/share/locale/uk/LC_MESSAGES
+copying resources/locale/uk/LC_MESSAGES/obkey.mo -> /tmpdir/build/obkey/debian/obkey/usr/share/locale/uk/LC_MESSAGES
+running install_egg_info
+Writing /tmpdir/build/obkey/debian/obkey/usr/lib/python3.9/dist-packages/obkey-1.3.2.egg-info
+   dh_installdocs -O--buildsystem=pybuild
+   dh_installchangelogs -O--buildsystem=pybuild
+   dh_python3 -O--buildsystem=pybuild
+   dh_installsystemduser -O--buildsystem=pybuild
+   dh_perl -O--buildsystem=pybuild
+   dh_link -O--buildsystem=pybuild
+   dh_strip_nondeterminism -O--buildsystem=pybuild
+	Normalized debian/obkey/usr/share/locale/uk/LC_MESSAGES/obkey.mo
+	Normalized debian/obkey/usr/share/locale/sr/LC_MESSAGES/obkey.mo
+	Normalized debian/obkey/usr/share/locale/hr/LC_MESSAGES/obkey.mo
+	Normalized debian/obkey/usr/share/locale/fr/LC_MESSAGES/obkey.mo
+	Normalized debian/obkey/usr/share/locale/bs/LC_MESSAGES/obkey.mo
+   dh_compress -O--buildsystem=pybuild
+   dh_fixperms -O--buildsystem=pybuild
+   dh_missing -O--buildsystem=pybuild
+   dh_installdeb -O--buildsystem=pybuild
+   dh_gencontrol -O--buildsystem=pybuild
+   dh_md5sums -O--buildsystem=pybuild
+   dh_builddeb -O--buildsystem=pybuild
+dpkg-deb: building package 'obkey' in '../obkey_22.10.16_all.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../obkey_22.10.16_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
