@@ -41,6 +41,8 @@ class OpenboxConfig:
 
         :param keyboard_node:
         """
+        xmlheader = '<?xml version="1.0" encoding="UTF-8"?>\n\n'
+
         if self.path is None:
             return
 
@@ -53,9 +55,11 @@ class OpenboxConfig:
                 "keyboard"
                 )
         self.dom.documentElement.replaceChild(newdom, keyboard)
-        with open(self.path, "w") as f:
+        with open(self.path, "w", encoding="utf8") as f:
             xmlform = self.dom.documentElement
-            f.write(xmlform.toxml("utf8"))
+            f.write(xmlheader)
+            f.write(xmlform.toxml())
+            f.write("\n")
         self.reconfigure_openbox()
 
     def reconfigure_openbox(self):
