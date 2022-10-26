@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Mon, 17 Oct 2022 10:23:23 +0000
+Source: obkey
+Binary: obkey
+Architecture: source all
+Version: 22.10.16
+Distribution: mx
+Urgency: medium
+Maintainer: Jerry Bond (stormyjerry@gmail.com)
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ obkey      - An app to manage Openbox keys
+Changes:
+ obkey (22.10.16) mx; urgency=medium
+ .
+   * fix minidom elements
+   * add pybuild
+Checksums-Sha1:
+ 0db081f1ef1409ae1966608ad5ef5d215561d4f2 517 obkey_22.10.16.dsc
+ 874fb392d70c7c16b57647cfe43b890520082639 35896 obkey_22.10.16.tar.xz
+ 4e92ea033cc8936ae19f4070101de7bc239bfefd 26392 obkey_22.10.16_all.deb
+ 32a5489b92696290418a6609518d6a1eaefba77d 6059 obkey_22.10.16_amd64.buildinfo
+Checksums-Sha256:
+ cb88bdcc5739caef9aab42d41116d3ebae3e972fbb4613fa4438f2e20eef5474 517 obkey_22.10.16.dsc
+ ab9f746ce5a5d8538f1856574074ce4c8d4448c22fb0154e49054cf64bd738e6 35896 obkey_22.10.16.tar.xz
+ 84da991033786d52ed2853b7a6095f96a2573ba72e1a25b18a5bcb633790d32b 26392 obkey_22.10.16_all.deb
+ 9f94f63948663408ebf5a9206de6a1ccdeaa1e76dcccb6d6d926d0bb90da04a8 6059 obkey_22.10.16_amd64.buildinfo
+Files:
+ ffcc7a0cd11f997c7ff7e6537adcc863 517 openbox optional obkey_22.10.16.dsc
+ 049ad9b1d728fdf8d510a5b00e6bc61f 35896 openbox optional obkey_22.10.16.tar.xz
+ 11f4b941527b6f60801c9bfaff184b79 26392 openbox optional obkey_22.10.16_all.deb
+ 521af8fffa17d24ffcac69f50046cc6b 6059 openbox optional obkey_22.10.16_amd64.buildinfo

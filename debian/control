@@ -1,12 +1,11 @@
 Source: obkey
 Section: openbox
-Priority: 
+Priority: optional
 Maintainer: Jerry Bond (stormyjerry@gmail.com)
-Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 3.9.3
+Build-Depends: debhelper (>= 13), python3
+Standards-Version: 4.6.1
 
 Package: obkey
-Architecture: amd64
-Replaces: 
-Depends: ${misc:Depends} 
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends} 
 Description: An app to manage Openbox keys
