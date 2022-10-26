@@ -7,7 +7,7 @@ from obkey_parts.ActionList import OBAction
 from obkey_parts.XmlUtils import (
         xml_find_nodes, xml_find_node, xml_get_str, parseString, Element
 )
-
+from xml.dom.minidom import getDOMImplementation as Dom
 
 class OBKeyBind(object):
 
@@ -46,7 +46,7 @@ class OBKeyBind(object):
 
     def deparse(self):
         """deparse"""
-        root = Element('keybind')
+        root = Dom().createDocument(None, "root", None).createElement("keybind")
         root.setAttribute('key', str(self.key))
         if self.chroot:
             root.setAttribute('chroot', "yes")
@@ -125,13 +125,12 @@ class OBKeyboard(object):
 
     def deparse(self):
         """deparse"""
+        root = Dom().createDocument(None, "root", None).createElement("keyboard")
 
-        root = parseString('<keyboard/>').documentElement
         chain_quit_key_node = parseString('<chainQuitKey>' +
                                           str(self.chain_quit_key) +
                                           '</chainQuitKey>').documentElement
         root.appendChild(chain_quit_key_node)
-
         for k in self.keybinds:
             root.appendChild(k.deparse())
 

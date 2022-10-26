@@ -14,6 +14,8 @@ from obkey_parts.Gui import (
 )
 from obkey_parts.Resources import _
 
+from xml.dom.minidom import getDOMImplementation as Dom
+
 class OBAction(object):
     """OBAction"""
 
@@ -74,7 +76,11 @@ class OBAction(object):
 
     def deparse(self):
         """deparse"""
-        root = Element('action')
+        #root = Element('action')
+        #root = Element('action')
+        #root = parseString('<action></action>').documentElement
+        root = Dom().createDocument(None, "root", None).createElement("action")
+
         root.setAttribute('name', str(self.name))
         for optdef in self.option_defs:
             od_node = optdef.deparse(self)
